@@ -45,7 +45,7 @@ mtalk.google.com
 
 # or as a regex to whitlist all of its kind.
 
-^((alt)[0-9](-))?mtalk\.google\.com$"
+# ^((alt)[0-9](-))?mtalk\.google\.com$"
 
 # Allow all Google Domains listed above (regex still needs to be imported in a seperate command, due to it needing a different flag)
 
@@ -406,9 +406,9 @@ www.redditstatic.com
 reddit.map.fastly.net
 www.redditmedia.com
 reddit-uploaded-media.s3-accelerate.amazonaws.com
-[a-z]\.thumbs\.redditmedia\.com
-(\.|^)redd\.it$
-(\.|^)reddit\.com$
+# [a-z]\.thumbs\.redditmedia\.com
+# (\.|^)redd\.it$
+# (\.|^)reddit\.com$
 
 # Tracking Packages sent with DPD
 # tracking.dpd.de
@@ -442,7 +442,7 @@ twitter.com
 upload.twitter.com
 api.twitter.com
 mobile.twitter.com
-(\.|^)twimg\.com$
+# (\.|^)twimg\.com$
 
 # Banks
 # TSB Mobile
