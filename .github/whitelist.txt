@@ -22,7 +22,8 @@ android.clients.google.com
 # Google Keep
 # The Google Keep Chrome App requires these domains to be whitelisted in order to sync.
 
-reminders-pa.googleapis.com firestore.googleapis.com
+reminders-pa.googleapis.com 
+firestore.googleapis.com
 
 # Google Fonts
 gstaticadssl.l.google.com
@@ -49,7 +50,8 @@ mtalk.google.com
 
 # Allow all Google Domains listed above (regex still needs to be imported in a seperate command, due to it needing a different flag)
 
-clients4.google.com clients2.google.com 
+clients4.google.com 
+clients2.google.com 
 s.youtube.com 
 video-stats.l.google.com 
 www.googleapis.com
@@ -66,11 +68,14 @@ redirector.gvt1.com
 # Microsoft (Windows, Office, Skype, etc)
 # Windows uses this to verify # connectivity to Internet
 
-www.msftncsi.com www.msftconnecttest.com
+www.msftncsi.com 
+www.msftconnecttest.com
 
 # Microsoft Web Pages (Outlook, Office365, Live, Microsoft.com...)
-outlook.office365.com products.office.com 
-c.s-microsoft.com i.s-microsoft.com 
+outlook.office365.com 
+products.office.com 
+c.s-microsoft.com 
+i.s-microsoft.com 
 login.live.com 
 login.microsoftonline.com 
 
