@@ -1,0 +1,355 @@
+# Veizour's personal whitelist
+# started from https://discourse.pi-hole.net/t/commonly-whitelisted-domains/212/7
+
+clients4.google.com
+clients2.google.com
+YouTube history
+
+pihole allow s.youtube.com 
+pihole allow video-stats.l.google.com
+YouTube App for iOS
+
+pihole allow www.googleapis.com 
+pihole allow youtubei.googleapis.com
+pihole allow oauthaccountmanager.googleapis.com
+Google Play
+
+As described here.
+
+pihole allow android.clients.google.com
+Google Keep
+
+The Google Keep Chrome App requires these domains to be whitelisted in order to sync.
+
+pihole allow reminders-pa.googleapis.com firestore.googleapis.com
+Google Fonts
+
+pihole allow gstaticadssl.l.google.com
+Gmail (Google Mail)
+
+iOS app requires this to be whitelisted for the app to connect.
+
+pihole allow googleapis.l.google.com
+Google Chrome (to update on ubuntu)
+
+pihole allow dl.google.com
+Android TV
+
+pihole allow redirector.gvt1.com
+Push Notification
+
+Domain is needed, so that Push Notifications work properly for some Andoid Apps like WhatsApp. If it is blocked the notifications only appear after manually opening the app.
+
+pihole allow mtalk.google.com
+or as a regex to whitlist all of its kind.
+
+pihole --allow-regex "^((alt)[0-9](-))?mtalk\.google\.com$"
+Allow all Google Domains listed above (regex still needs to be imported in a seperate command, due to it needing a different flag)
+
+pihole allow clients4.google.com clients2.google.com s.youtube.com video-stats.l.google.com www.googleapis.com
+ youtubei.googleapis.com oauthaccountmanager.googleapis.com android.clients.google.com reminders-pa.googleapis.com fires
+tore.googleapis.com gstaticadssl.l.google.com googleapis.l.google.com dl.google.com redirector.gvt1.com
+Microsoft (Windows, Office, Skype, etc)
+Windows uses this to verify connectivity to Internet
+
+pihole allow www.msftncsi.com www.msftconnecttest.com
+Microsoft Web Pages (Outlook, Office365, Live, Microsoft.com...)
+
+pihole allow outlook.office365.com products.office.com c.s-microsoft.com i.s-microsoft.com login.live.com login.microsoftonline.com 
+Backup bitlocker recovery key to Microsoft account
+
+pihole allow g.live.com
+Microsoft Store (Windows Store)
+
+pihole allow dl.delivery.mp.microsoft.com geo-prod.do.dsp.mp.microsoft.com displaycatalog.mp.microsoft.com
+Windows 10 Update
+
+pihole allow sls.update.microsoft.com.akadns.net fe3.delivery.dsp.mp.microsoft.com.nsatc.net tlu.dl.delivery.mp.microsoft.com
+Microsoft Edge Browser Update
+
+pihole allow msedge.api.cdp.microsoft.com
+Xbox Live
+
+This domain is used for sign-ins, creating new accounts, and recovering existing Microsoft accounts on your (confirmed by Microsoft)
+
+pihole allow clientconfig.passport.net 
+Xbox Live Achievements (confirmed by Microsoft)
+
+pihole allow v10.events.data.microsoft.com
+pihole allow v20.events.data.microsoft.com
+Xbox Live Messaging (post)
+
+pihole allow client-s.gateway.messenger.live.com
+Store App on Series X/S
+
+pihole allow arc.msn.com
+EA Play on Xbox
+
+pihole allow activity.windows.com
+Full Functionality
+
+There are several domains discovered initially on Reddit and /r/xboxone, which were also confirmed by Microsoft as being required by Xbox Live for full functionality.
+
+pihole allow xbox.ipv6.microsoft.com device.auth.xboxlive.com www.msftncsi.com title.mgt.xboxlive.com xsts.auth.xboxlive.com title.auth.xboxlive.com ctldl.windowsupdate.com attestation.xboxlive.com xboxexperiencesprod.experimentation.xboxlive.com xflight.xboxlive.com cert.mgt.xboxlive.com xkms.xboxlive.com def-vef.xboxlive.com notify.xboxlive.com help.ui.xboxlive.com licensing.xboxlive.com eds.xboxlive.com www.xboxlive.com v10.vortex-win.data.microsoft.com settings-win.data.microsoft.com
+Skype
+
+See the GitHub Topic on these domains.
+
+pihole allow s.gateway.messenger.live.com client-s.gateway.messenger.live.com ui.skype.com pricelist.skype.com apps.skype.com m.hotmail.com sa.symcb.com s{1..5}.symcb.com 
+Microsoft Office
+
+Reddit link - r/pihole - MS Office issues
+
+pihole allow officeclient.microsoft.com
+Bing Maps Platform
+
+as described here.
+
+pihole allow dev.virtualearth.net ecn.dev.virtualearth.net t0.ssl.ak.dynamic.tiles.virtualearth.net t0.ssl.ak.tiles.virtualearth.net
+Apple
+Apple Music
+
+pihole allow itunes.apple.com
+pihole allow s.mzstatic.com
+Apple ID
+
+pihole allow appleid.apple.com
+iOS Weather app
+
+pihole allow gsp-ssl.ls.apple.com
+pihole allow gsp-ssl.ls-apple.com.akadns.net
+Captive-portal tests
+These domains are checked by the operating systems when connecting via wifi, and if they don't get the response they expect, they may try to open a wifi login page or similar as they believe they are located behind a captive portal.
+
+Android/Chrome
+
+pihole allow connectivitycheck.android.com android.clients.google.com clients3.google.com connectivitycheck.gstatic.com 
+Windows/Microsoft
+
+pihole allow msftncsi.com www.msftncsi.com ipv6.msftncsi.com
+iOS/Apple
+
+(note that this does not cover all domains used older iOS versions)
+
+pihole allow captive.apple.com gsp1.apple.com www.apple.com www.appleiphonecell.com
+Other
+Jackbox.tv
+
+Jackbox.tv will not load unless you whitelist google-analytics. As of October 2020, this may no longer be necessary.
+
+pihole allow www.google-analytics.com
+pihole allow ssl.google-analytics.com
+Spotify
+
+The Spotify app for iOS will stop functioning unless it's web service counterpart is whitelisted.
+
+pihole allow spclient.wg.spotify.com apresolve.spotify.com
+For spotify to work on TVs the API might need whitelisted:
+
+pihole allow api-tv.spotify.com
+Target's Weekly Ads
+
+pihole allow weeklyad.target.com m.weeklyad.target.com weeklyad.target.com.edgesuite.net
+Facebook, Facebook Messenger
+
+pihole allow upload.facebook.com creative.ak.fbcdn.net external-lhr0-1.xx.fbcdn.net external-lhr1-1.xx.fbcdn.net external-lhr10-1.xx.fbcdn.net external-lhr2-1.xx.fbcdn.net external-lhr3-1.xx.fbcdn.net external-lhr4-1.xx.fbcdn.net external-lhr5-1.xx.fbcdn.net external-lhr6-1.xx.fbcdn.net external-lhr7-1.xx.fbcdn.net external-lhr8-1.xx.fbcdn.net external-lhr9-1.xx.fbcdn.net fbcdn-creative-a.akamaihd.net scontent-lhr3-1.xx.fbcdn.net scontent.xx.fbcdn.net scontent.fgdl5-1.fna.fbcdn.net graph.facebook.com b-graph.facebook.com connect.facebook.com cdn.fbsbx.com api.facebook.com edge-mqtt.facebook.com mqtt.c10r.facebook.com portal.fb.com star.c10r.facebook.com star-mini.c10r.facebook.com b-api.facebook.com fb.me bigzipfiles.facebook.com l.facebook.com www.facebook.com scontent-atl3-1.xx.fbcdn.net static.xx.fbcdn.net edge-chat.messenger.com video.xx.fbcdn.net external-ort2-1.xx.fbcdn.net scontent-ort2-1.xx.fbcdn.net edge-chat.facebook.com scontent-mia3-1.xx.fbcdn.net web.facebook.com rupload.facebook.com l.messenger.com
+DirectTV
+
+Sourced from here.
+
+pihole allow directvnow.com directvapplications.hb.omtrdc.net s.zkcdn.net js.maxmind.com
+Bild DE
+
+pihole allow www.asadcdn.com code.bildstatic.de de.ioam.de json.bild.de script.ioam.de tags.tiqcdn.com tagger.opecloud.com
+Spiegel DE
+
+pihole allow image.angebote.spiegel.de
+Plex Domains
+
+pihole allow plex.tv tvdb2.plex.tv pubsub.plex.bz proxy.plex.bz proxy02.pop.ord.plex.bz cpms.spop10.ams.plex.bz meta-db-worker02.pop.ric.plex.bz meta.plex.bz tvthemes.plexapp.com.cdn.cloudflare.net tvthemes.plexapp.com 106c06cd218b007d-b1e8a1331f68446599e96a4b46a050f5.ams.plex.services meta.plex.tv cpms35.spop10.ams.plex.bz proxy.plex.tv metrics.plex.tv pubsub.plex.tv status.plex.tv www.plex.tv node.plexapp.com nine.plugins.plexapp.com staging.plex.tv app.plex.tv o1.email.plex.tv  o2.sg0.plex.tv dashboard.plex.tv
+Domains used by Plex
+
+pihole allow gravatar.com # custom login pictures
+pihole allow thetvdb.com # metadata for tv series
+pihole allow themoviedb.com # metadata for movies
+pihole allow chtbl.com # iHeart radio/Plex Podcast
+Sonarr
+
+pihole allow services.sonarr.tv skyhook.sonarr.tv download.sonarr.tv apt.sonarr.tv forums.sonarr.tv
+Placehold.it (Image placeholders often used during web design. Not sure why this is even blocked in the first place.)
+
+pihole allow placehold.it placeholdit.imgix.net
+Dropbox
+
+As described here:
+
+pihole allow dl.dropboxusercontent.com ns1.dropbox.com ns2.dropbox.com
+Fox News
+
+as described here.
+
+pihole allow widget-cdn.rpxnow.com
+Images on Marketwatch.com
+
+pihole allow s.marketwatch.com
+GoDaddy webmail buttons
+
+pihole allow imagesak.secureserver.net
+WatchESPN
+
+as described here.
+
+pihole allow fpdownload.adobe.com entitlement.auth.adobe.com livepassdl.conviva.com
+NVIDIA GeForce Experience
+
+GFE requires this to download driver updates (or events.gfe.nvidia.com, but that is also used for telemetry).
+
+pihole allow gfwsl.geforce.com
+Videos not playing in times.com and nydailynews.com
+
+pihole allow delivery.vidible.tv img.vidible.tv videos.vidible.tv edge.api.brightcove.com cdn.vidible.tv
+Videos not playing in NCAA March Madness App
+
+pihole allow live-manifests-aka.warnermediacdn.com
+Videos not playing on weather.com
+
+pihole allow v.w-x.co
+Moto phones OS updates
+
+pihole allow appspot-preview.l.google.com
+Grand Theft Auto V Online PC
+
+Since March blocking Rockstar telemetry seems to crash GTAOnline.
+Unblocking the domain fixed crashing for people at GTA Forums.
+
+pihole allow prod.telemetry.ros.rockstargames.com
+Chevrolet
+
+Couldn't browse inventory w/o whitelisting
+
+pihole allow chevrolet.com
+Epic Games Store
+
+The tracking domain is required to make a purchase on the website, otherwise the order modal will appear to be loading forever.
+It is also required when logging into the Epic Launcher when using two-factor authentication.
+
+pihole allow tracking.epicgames.com
+Origin (Savegame-Sync)
+
+pihole allow cloudsync-prod.s3.amazonaws.com
+Red Hat Online Learning (subscription required)
+
+embedded video player
+When blocked, video would play; however, not show progress (continually showing it was loading) and thus not record your progression through the video in the course progress tracker.
+
+pihole allow 79423.analytics.edgekey.net
+Lowe's Checkout
+
+Clicking "Start Secure Checkout" from the Shopping Cart on Lowe's website does not load anything.
+
+pihole allow assets.adobedtm.com
+Home Depot Checkout
+
+Clicking "Checkout" from the Shopping Cart on Home Depot's website takes you to a page to check out as guest, login, or create account. Entering login credentials does not ungray the "Sign In" option. "Checkout as a Guest" and "Create an Account" options do not load anything.
+
+pihole allow nexus.ensighten.com
+Mozilla Firefox Tracking Protection
+
+Firefox updates the black- and whitelists for Tracking Protection daily using a domain that might not only occur on some Blocklists, but also can be blocked as the result of regex blacklists for starting with "tracking". The domain should be whitelisted to ensure the Tracking Protection can be updated (when used at all), or it might render some websites useless on the Firefox Webbrowser in the long run.
+
+pihole allow tracking-protection.cdn.mozilla.net
+Playstation 5 "Recently Played Games" and Trophies
+
+pihole allow telemetry-console.api.playstation.com
+Cannon Printers
+
+To be able to retrieve firmware updates
+
+pihole allow gdlp01.c-wss.com
+Reddit
+
+pihole allow styles.redditmedia.com
+pihole allow www.redditstatic.com
+pihole allow reddit.map.fastly.net
+pihole allow www.redditmedia.com
+pihole allow reddit-uploaded-media.s3-accelerate.amazonaws.com
+pihole --white-regex [a-z]\.thumbs\.redditmedia\.com
+pihole --white-regex "(\.|^)redd\.it$"
+pihole --white-regex "(\.|^)reddit\.com$"
+Tracking Packages sent with DPD
+
+pihole allow tracking.dpd.de
+WhatsApp
+
+pihole allow wa.me
+pihole allow www.wa.me
+pihole --white-regex "^whatsapp-cdn-shv-[0-9]{2}-[a-z]{3}[0-9]\.fbcdn\.net$"
+pihole --white-regex "^((www|(w[0-9]\.)?web|media((-[a-z]{3}|\.[a-z]{4})[0-9]{1,2}-[0-9](\.|-)(cdn|fna))?)\.)?whatsapp\.(com|net)$"
+Signal
+
+pihole allow ud-chat.signal.org
+pihole allow chat.signal.org
+pihole allow storage.signal.org
+pihole allow signal.org
+pihole allow www.signal.org
+pihole allow updates2.signal.org
+pihole allow textsecure-service-whispersystems.org
+pihole allow giphy-proxy-production.whispersystems.org
+pihole allow cdn.signal.org
+pihole allow whispersystems-textsecure-attachments.s3-accelerate.amazonaws.com
+pihole allow d83eunklitikj.cloudfront.net
+pihole allow souqcdn.com
+pihole allow cms.souqcdn.com
+pihole allow api.directory.signal.org
+pihole allow contentproxy.signal.org
+pihole allow turn1.whispersystems.org
+Twitter
+
+pihole allow twitter.com
+pihole allow upload.twitter.com
+pihole allow api.twitter.com
+pihole allow mobile.twitter.com
+pihole --white-regex "(\.|^)twimg\.com$"
+Banks
+
+TSB Mobile
+
+pihole allow h-sdk.online-metrix.net
+
+*Or Try:*
+
+pihole allow check2.tsb.co.uk
+Citizen's Bank
+
+pihole allow p11.techlab-cdn.com
+OLA MONEY
+
+pihole allow logs.juspay.in
+Resturants / Rewards
+
+Burger King
+
+pihole allow appboy-images.com rest.iad-03.braze.com
+Punchh (Farmer Boys, El Pollo Loco, Capriotti's, etc.)
+
+pihole allow mobileandroidapi.punchh.com
+Rumble
+
+The Rumble interface may have missing thumbnails and icons, and live streams present as a black screen. These are served from subdomains of rmbl.ws which should be added as a wildcard whitelist entry.
+
+Dutch / The Netherlands websites
+
+nu.nl (enable videos, tvgids et cetera)
+
+pihole allow cds.s5x3j6q5.hwcdn.net
+Swedish streaming services
+
+svtplay (enable continuing where you left off)
+
+pihole allow analytics.svt.se
+Hulu
+
+# To stream movie or show
+
+pihole allow ads-a-darwin.hulustream.com
+pihole allow ads-fa-darwin.hulustream.com
