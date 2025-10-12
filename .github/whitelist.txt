@@ -414,6 +414,9 @@ reddit-uploaded-media.s3-accelerate.amazonaws.com
 # [a-z]\.thumbs\.redditmedia\.com
 # (\.|^)redd\.it$
 # (\.|^)reddit\.com$
+thirdparty.bnc.lt
+click.redditmail.com
+reddit.com
 
 # Tracking Packages sent with DPD
 # tracking.dpd.de
