@@ -17,6 +17,11 @@ presence.teams.live.com
 ic3.events.data.microsoft.com
 mobile.events.data.microsoft.com
 
+# Microsoft Visual Studio
+
+#azure
+dev.azure.com
+
 # YouTube history
 
 s.youtube.com 
