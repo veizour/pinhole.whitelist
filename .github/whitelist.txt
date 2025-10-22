@@ -161,7 +161,7 @@ client-s.gateway.messenger.live.com
 ui.skype.com pricelist.skype.com 
 apps.skype.com m.hotmail.com 
 sa.symcb.com 
-s{1..5}.symcb.com 
+#s{1..5}.symcb.com 
 
 # Microsoft Office
 # Reddit link - r/pihole - MS Office issues
